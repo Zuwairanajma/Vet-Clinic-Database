@@ -139,3 +139,5 @@ LEFT JOIN animals A ON O.id = A.owner_id
 GROUP BY O.full_name
 ORDER BY COUNT(A.id) DESC
 LIMIT 1;
+
+-- Join Tables for visits
