@@ -1,5 +1,29 @@
+INSERT 0 11
+                          Table "public.animals"
+     Column      |         Type          | Collation | Nullable | Default 
+-----------------+-----------------------+-----------+----------+---------
+ id              | integer               |           |          | 
+ name            | character varying(60) |           |          | 
+ date_of_birth   | date                  |           |          | 
+ escape_attempts | integer               |           |          | 
+ neutered        | boolean               |           |          | 
+ weight_kg       | numeric               |           |          | 
+ species         | character varying(60) |           |          | 
+
+          List of relations
+ Schema |  Name   | Type  |  Owner   
+--------+---------+-------+----------
+ public | animals | table | postgres
+(1 row)
+
  id |   name   | date_of_birth | escape_attempts | neutered | weight_kg | species 
 ----+----------+---------------+-----------------+----------+-----------+---------
+  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | 
+  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | 
+  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | 
+  6 | Plantmon | 2021-11-15    |               2 | t        |      -5.7 | 
+  8 | Angemon  | 2005-06-12    |               1 | t        |       -45 | 
+  9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | 
   6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
   8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
   6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
@@ -21,7 +45,7 @@
   2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
   4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | digimon
-(21 rows)
+(27 rows)
 
   name   
 ---------
@@ -33,16 +57,22 @@
  Devimon
  Gabumon
  Devimon
-(8 rows)
+ Gabumon
+ Devimon
+(10 rows)
 
    name   
 ----------
+ Agumon
+ Gabumon
  Plantmon
  Angemon
  Plantmon
  Angemon
  Plantmon
  Angemon
+ Plantmon
+ Angemon
  Agumon
  Gabumon
  Agumon
@@ -51,19 +81,21 @@
  Gabumon
  Agumon
  Gabumon
-(14 rows)
+(18 rows)
 
  date_of_birth 
 ---------------
  2021-01-07
  2021-01-07
  2021-01-07
+ 2020-02-03
  2021-01-07
  2020-02-03
  2020-02-03
  2020-02-03
+ 2021-01-07
  2020-02-03
-(8 rows)
+(10 rows)
 
     name    | escape_attempts 
 ------------+-----------------
@@ -79,46 +111,103 @@
  Pikachu    |               1
  Blossom    |               3
  Pikachu    |               1
+ Devimon    |               5
+ Boarmon    |               7
  Blossom    |               3
+ Ditto      |               4
  Angemon    |               1
  Angemon    |               1
  Angemon    |               1
  Devimon    |               5
  Boarmon    |               7
  Devimon    |               5
+ Pikachu    |               1
  Devimon    |               5
  Boarmon    |               7
+ Blossom    |               3
  Devimon    |               5
  Boarmon    |               7
-(23 rows)
+(28 rows)
 
  id |   name   | date_of_birth | escape_attempts | neutered | weight_kg | species 
 ----+----------+---------------+-----------------+----------+-----------+---------
  10 | Blossom  | 1998-10-13    |               3 | t        |        17 | pokemon
+  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | 
+  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | 
  10 | Blossom  | 1998-10-13    |               3 | t        |        17 | pokemon
+  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | 
+  6 | Plantmon | 2021-11-15    |               2 | t        |      -5.7 | 
+  8 | Angemon  | 2005-06-12    |               1 | t        |       -45 | 
+  9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | 
+ 10 | Blossom  | 1998-10-13    |               3 | t        |        17 | 
+ 11 | Ditto    | 2022-05-14    |               4 | t        |        22 | 
+  6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
+  6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
+  6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
+  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
+  9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | digimon
+  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
+  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
+  9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | digimon
  10 | Blossom  | 1998-10-13    |               3 | t        |        17 | pokemon
-  6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon  | 2005-06-12    |               1 | t        |        45 | digimon
   1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
   4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | digimon
-  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
-  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | digimon
-  1 | Agumon   | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon  | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon  | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon  | 2005-06-07    |               7 | t        |      20.4 | digimon
-(24 rows)
+(32 rows)
+
+ id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
+----+------------+---------------+-----------------+----------+-----------+---------
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | 
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | 
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | 
+  5 | Charmander | 2020-02-08    |               0 | f        |       -11 | 
+  6 | Plantmon   | 2021-11-15    |               2 | t        |      -5.7 | 
+  7 | Squirtle   | 1993-04-02    |               3 | f        |    -12.13 | 
+  8 | Angemon    | 2005-06-12    |               1 | t        |       -45 | 
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | 
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | 
+ 11 | Ditto      | 2022-05-14    |               4 | t        |        22 | 
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+(40 rows)
 
  id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
 ----+------------+---------------+-----------------+----------+-----------+---------
@@ -133,52 +222,21 @@
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
- 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | 
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | 
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | 
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
-(30 rows)
-
- id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
-----+------------+---------------+-----------------+----------+-----------+---------
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
-  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
-  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
-  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
-  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
-  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
-  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
- 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
- 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-(17 rows)
+(20 rows)
 
 BEGIN
-UPDATE 0
- id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
-----+------------+---------------+-----------------+----------+-----------+---------
+UPDATE 11
+ id |    name    | date_of_birth | escape_attempts | neutered | weight_kg |   species   
+----+------------+---------------+-----------------+----------+-----------+-------------
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
   5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
   7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
@@ -190,8 +248,16 @@ UPDATE 0
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
- 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | unspecified
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | unspecified
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | unspecified
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | unspecified
+  5 | Charmander | 2020-02-08    |               0 | f        |       -11 | unspecified
+  6 | Plantmon   | 2021-11-15    |               2 | t        |      -5.7 | unspecified
+  7 | Squirtle   | 1993-04-02    |               3 | f        |    -12.13 | unspecified
+  8 | Angemon    | 2005-06-12    |               1 | t        |       -45 | unspecified
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | unspecified
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | unspecified
   6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
   8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
   6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
@@ -207,123 +273,148 @@ UPDATE 0
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
   1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
-(34 rows)
+ 11 | Ditto      | 2022-05-14    |               4 | t        |        22 | unspecified
+(45 rows)
 
 ROLLBACK
 BEGIN
-UPDATE 21
-UPDATE 0
+UPDATE 27
+UPDATE 5
  id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
 ----+------------+---------------+-----------------+----------+-----------+---------
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
   7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |      -5.7 | digimon
+  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
+  8 | Angemon    | 2005-06-12    |               1 | t        |       -45 | digimon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
   5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
   7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
-  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
-  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
- 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
   1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  5 | Charmander | 2020-02-08    |               0 | f        |       -11 | pokemon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |    -12.13 | pokemon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
-(34 rows)
+ 11 | Ditto      | 2022-05-14    |               4 | t        |        22 | pokemon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+(45 rows)
 
 COMMIT
 BEGIN
-DELETE 34
+DELETE 45
 ROLLBACK
  id |    name    | date_of_birth | escape_attempts | neutered | weight_kg | species 
 ----+------------+---------------+-----------------+----------+-----------+---------
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
   7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |      -5.7 | digimon
+  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
+  8 | Angemon    | 2005-06-12    |               1 | t        |       -45 | digimon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
   5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
   7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
-  5 | Charmander | 2020-02-08    |               0 | f        |        11 | pokemon
-  7 | Squirtle   | 1993-04-02    |               3 | f        |     12.13 | pokemon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
+  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
- 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
-  6 | Plantmon   | 2021-11-15    |               2 | t        |       5.7 | digimon
-  8 | Angemon    | 2005-06-12    |               1 | t        |        45 | digimon
+  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
+  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
   1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
   2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
   3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
   4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
   9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+  5 | Charmander | 2020-02-08    |               0 | f        |       -11 | pokemon
+  7 | Squirtle   | 1993-04-02    |               3 | f        |    -12.13 | pokemon
  10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
-  1 | Agumon     | 2020-02-03    |               0 | t        |     10.23 | digimon
-  2 | Gabumon    | 2018-11-15    |               2 | t        |         8 | digimon
-  4 | Devimon    | 2017-05-12    |               5 | t        |        11 | digimon
-  9 | Boarmon    | 2005-06-07    |               7 | t        |      20.4 | digimon
-(34 rows)
+ 11 | Ditto      | 2022-05-14    |               4 | t        |        22 | pokemon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+  3 | Pikachu    | 2021-01-07    |               1 | f        |     15.04 | pokemon
+ 10 | Blossom    | 1998-10-13    |               3 | t        |        17 | pokemon
+(45 rows)
 
 BEGIN
-DELETE 0
+DELETE 1
 SAVEPOINT
-UPDATE 34
+UPDATE 44
 ROLLBACK
-UPDATE 0
+UPDATE 4
 COMMIT
  count 
 -------
-    34
+    44
 (1 row)
 
  count 
 -------
-     7
+     9
 (1 row)
 
          avg         
 ---------------------
- 15.0226470588235294
+ 15.1425000000000000
 (1 row)
 
  neutered | escape_count 
 ----------+--------------
- t        |           20
+ t        |           26
 (1 row)
 
  species | min_weight | max_weight 
