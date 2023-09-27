@@ -12,7 +12,7 @@ SELECT * from animals WHERE weight_kg >= '10.4' and weight_kg <= '17.3';
 BEGIN TRANSACTION;
 
 UPDATE animals
-SET species = 'unspecified'
+SET species = 'unspecified';
 WHERE species IS NULL;
 
 SELECT * FROM animals;
@@ -133,20 +133,18 @@ LIMIT 1;
 
 -- Join Tables for visits
 
-SELECT A.name AS last_animal_seen 
+SELECT A.name AS last_animal_seen
 FROM animals A
 JOIN visits V ON V.animal_id = A.id
 JOIN vets VE ON V.vet_id = VE.id
-WHERE VE.name = 'William Tatchar'
+WHERE VE.name = 'William Tatcher'
 ORDER BY V.date_of_visit DESC
 LIMIT 1;
 
-SELECT COUNT(DISTINCT A.id)
-FROM animals A
-JOIN visits V ON A.id = V.animal_id
+SELECT COUNT(DISTINCT V.animal_id)
+FROM visits V
 JOIN vets VE ON V.vet_id = VE.id
-WHERE VE.name = 'Stephanie Mender';
-
+WHERE VE.name = 'Stephanie Mendez';
 
 SELECT V.name AS vet_name, SP.name AS specialty
 FROM vets V
