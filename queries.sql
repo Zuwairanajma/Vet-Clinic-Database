@@ -141,10 +141,6 @@ WHERE VE.name = 'William Tatchar'
 ORDER BY V.date_of_visit DESC
 LIMIT 1;
 
--- SELECT COUNT(DISTINCT V.animal_id)
--- FROM visits V
--- JOIN vets VE ON V.vet_id = VE.id
--- WHERE VE.name = 'Stephanie Mender';
 SELECT COUNT(DISTINCT A.id)
 FROM animals A
 JOIN visits V ON A.id = V.animal_id
