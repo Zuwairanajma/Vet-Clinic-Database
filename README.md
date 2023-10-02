@@ -45,6 +45,7 @@
 - **[Primary key and foreign key]**
 - **[one-to-many relationships]**
 - **[Queries that answer analytical and specific questions]**
+- **[Database performance audit]**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -80,7 +81,7 @@ Clone this repository to your desired folder:
 <!-- FUTURE FEATURES -->
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **[Database performance audit]**
+- [ ] **User authentication and authorization:**
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

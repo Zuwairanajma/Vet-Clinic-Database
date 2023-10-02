@@ -13,10 +13,8 @@ BEGIN TRANSACTION;
 
 UPDATE animals
 SET species = 'unspecified';
-WHERE species IS NULL;
 
 SELECT * FROM animals;
-
 ROLLBACK;
 BEGIN TRANSACTION;
 
@@ -31,15 +29,14 @@ WHERE species IS NULL;
 SELECT * FROM animals;
 
 COMMIT;
+SELECT * FROM animals;
 
 -- Begin Second Transaction
 
 BEGIN TRANSACTION;
 
 DELETE FROM animals;
-
 ROLLBACK;
-
 SELECT * FROM animals;
 
 -- Begin Third Transaction
@@ -54,7 +51,7 @@ SET weight_kg = weight_kg * -1;
 ROLLBACK TO savepoint_weight;
 
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
-
+SELECT * FROM animals;
 COMMIT;
 
 -- Begin forth transaction
@@ -195,3 +192,11 @@ JOIN species S ON S.id = A.species_id
 WHERE VE.name = 'Maisy Smith'
 GROUP BY S.name
 ORDER BY COUNT(*) DESC LIMIT 1;
+
+-- performance audit queries
+EXPLAIN ANALYZE
+SELECT COUNT(*) FROM visits where animal_id = 4;
+EXPLAIN ANALYZE
+SELECT * FROM visits where vet_id = 2;
+EXPLAIN ANALYZE
+SELECT * FROM owners where email = 'owner_18327@mail.com';
