@@ -76,6 +76,12 @@ Clone this repository to your desired folder:
 - Twitter: [@SadiqJuwairiyya](https://twitter.com/SadiqJuwairiyya)
 - LinkedIn: [Zuwaira Sadiq](https://www.linkedin.com/in/zuwaira-sadiq-566b891b0?)
 
+👤 **Ricardo Egas**
+
+- GitHub: [@githubhandle](https://github.com/RicardoEgas)
+- Twitter: [@twitterhandle](https://twitter.com/RjEgas)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/ricardo-egas-952125136)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- FUTURE FEATURES -->
