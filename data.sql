@@ -58,50 +58,27 @@ INSERT INTO specializations (vet_id, species_id) VALUES
 	('3', '1'),
 	('4', '2');
 
--- INSERT INTO visits (animal_id, vet_id, date_of_visit) VALUES
--- 	('1','1', 'May 24 2020'),
--- 	('1', '3', 'Jul 22 2020'),
--- 	('2', '4', 'Feb 2 2021'),
--- 	('3', '2', 'Jan 5 2020'),
--- 	('3', '2', 'Mar 8 2020'),
--- 	('3', '2', 'May 14 2020'),
--- 	('4', '3', 'May 4 2021'),
--- 	('5', '4', 'Feb 24 2021'),
--- 	('6', '2', 'Dec 21 2019'),
--- 	('6', '1', 'Aug 10 2020'),
--- 	('6', '2', 'Apr 7 2021'),
--- 	('7', '3', 'Sep 29 2019'),
--- 	('8', '4', 'Oct 3 2020'),
--- 	('8', '4', 'Nov 4 2020'),
--- 	('9', '2', 'Jan 24 2019'),
--- 	('9', '2', 'May 15 2019'),
--- 	('9', '2', 'Feb 27 2020'),
--- 	('9', '2', 'Aug 3 2020'),
--- 	('10', '3', 'May 24 2020'),
--- 	('10', '1', 'Jan 11 2021');
-
-INSERT INTO visits (animal_id, vet_id, date_of_visit)
-VALUES
-    ((SELECT id FROM animals WHERE name = 'Agumon'), (SELECT id FROM vets WHERE name = 'William Tatcher'), '2020-05-24'),
-    ((SELECT id FROM animals WHERE name = 'Agumon'), (SELECT id FROM vets WHERE name = 'Stephanie Mendez'), '2020-07-22'),
-    ((SELECT id FROM animals WHERE name = 'Gabumon'), (SELECT id FROM vets WHERE name = 'Jack Harkness'), '2021-02-02'),
-    ((SELECT id FROM animals WHERE name = 'Pikachu'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2020-01-05'),
-    ((SELECT id FROM animals WHERE name = 'Pikachu'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2020-03-08'),
-    ((SELECT id FROM animals WHERE name = 'Pikachu'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2020-05-14'),
-    ((SELECT id FROM animals WHERE name = 'Devimon'), (SELECT id FROM vets WHERE name = 'Stephanie Mendez'), '2021-05-04'),
-    ((SELECT id FROM animals WHERE name = 'Charmander'), (SELECT id FROM vets WHERE name = 'Jack Harkness'), '2021-02-24'),
-    ((SELECT id FROM animals WHERE name = 'Plantmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2019-12-21'),
-    ((SELECT id FROM animals WHERE name = 'Plantmon'), (SELECT id FROM vets WHERE name = 'William Tatcher'), '2020-08-10'),
-    ((SELECT id FROM animals WHERE name = 'Plantmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2021-04-07'),
-    ((SELECT id FROM animals WHERE name = 'Squirtle'), (SELECT id FROM vets WHERE name = 'Stephanie Mendez'), '2019-09-29'),
-    ((SELECT id FROM animals WHERE name = 'Angemon'), (SELECT id FROM vets WHERE name = 'Jack Harkness'), '2020-10-03'),
-    ((SELECT id FROM animals WHERE name = 'Angemon'), (SELECT id FROM vets WHERE name = 'Jack Harkness'), '2020-11-04'),
-    ((SELECT id FROM animals WHERE name = 'Boarmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2019-01-24'),
-    ((SELECT id FROM animals WHERE name = 'Boarmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2019-05-15'),
-    ((SELECT id FROM animals WHERE name = 'Boarmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2020-02-27'),
-    ((SELECT id FROM animals WHERE name = 'Boarmon'), (SELECT id FROM vets WHERE name = 'Maisy Smith'), '2020-08-03'),
-    ((SELECT id FROM animals WHERE name = 'Blossom'), (SELECT id FROM vets WHERE name = 'Stephanie Mendez'), '2020-05-24'),
-    ((SELECT id FROM animals WHERE name = 'Blossom'), (SELECT id FROM vets WHERE name = 'William Tatcher'), '2021-01-11');
+INSERT INTO visits (animal_id, vet_id, date_of_visit) VALUES
+	('1','1', 'May 24 2020'),
+	('1', '3', 'Jul 22 2020'),
+	('2', '4', 'Feb 2 2021'),
+	('3', '2', 'Jan 5 2020'),
+	('3', '2', 'Mar 8 2020'),
+	('3', '2', 'May 14 2020'),
+	('4', '3', 'May 4 2021'),
+	('5', '4', 'Feb 24 2021'),
+	('6', '2', 'Dec 21 2019'),
+	('6', '1', 'Aug 10 2020'),
+	('6', '2', 'Apr 7 2021'),
+	('7', '3', 'Sep 29 2019'),
+	('8', '4', 'Oct 3 2020'),
+	('8', '4', 'Nov 4 2020'),
+	('9', '2', 'Jan 24 2019'),
+	('9', '2', 'May 15 2019'),
+	('9', '2', 'Feb 27 2020'),
+	('9', '2', 'Aug 3 2020'),
+	('10', '3', 'May 24 2020'),
+	('10', '1', 'Jan 11 2021');
 
 
 -- This will add 3.594.280 visits considering you have 10 animals, 4 vets, and it will use around ~87.000 timestamps (~4min approx.)
